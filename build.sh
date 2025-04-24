@@ -11,6 +11,7 @@ BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 echo "Building r53q v${APP_VERSION} (commit ${GIT_COMMIT}, date ${BUILD_DATE})"
 
+export CGO_ENABLED=0
 go build -ldflags "\
   -X 'main.appVersion=${APP_VERSION}' \
   -X 'main.gitCommit=${GIT_COMMIT}' \
